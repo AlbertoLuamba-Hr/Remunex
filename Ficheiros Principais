@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Remunex - Sistema Salarial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1> Remunex</h1>
+        <p>Sistema de Gestão de Folha de Pagamento</p>
+    </header>
+
+    <main>
+        <section class="form">
+            <h2>Adicionar Funcionário</h2>
+
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="number" id="salario" placeholder="Salário Base">
+            <input type="number" id="subsidio" placeholder="Subsídio">
+
+            <button onclick="adicionarFuncionario()">Adicionar</button>
+        </section>
+
+        <section class="lista">
+            <h2>Funcionários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Salário Base</th>
+                        <th>Subsídio</th>
+                        <th>INSS</th>
+                        <th>Salário Líquido</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaFuncionarios"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+}
+
+header {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.form, .lista {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+input {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+function adicionarFuncionario() {
+    let nome = document.getElementById("nome").value;
+    let salario = parseFloat(document.getElementById("salario").value);
+    let subsidio = parseFloat(document.getElementById("subsidio").value);
+
+    if (!nome || isNaN(salario)) {
+        alert("Preencha os campos corretamente!");
+        return;
+    }
+
+    let inss = salario * 0.03;
+    let salarioLiquido = salario + (subsidio || 0) - inss;
+
+    let tabela = document.getElementById("tabelaFuncionarios");
+
+    let linha = `
+        <tr>
+            <td>${nome}</td>
+            <td>${salario.toFixed(2)}</td>
+            <td>${(subsidio || 0).toFixed(2)}</td>
+            <td>${inss.toFixed(2)}</td>
+            <td>${salarioLiquido.toFixed(2)}</td>
+        </tr>
+    `;
+
+    tabela.innerHTML += linha;
+
+    // Limpar campos
+    document.getElementById("nome").value = "";
+    document.getElementById("salario").value = "";
+    document.getElementById("subsidio").value = "";
+}
