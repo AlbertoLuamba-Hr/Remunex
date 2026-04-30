@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Remunex</title>
+</head>
+<body>
+  <h1>Processamento de Salário</h1>
+
+  <input type="number" id="salario" placeholder="Salário base">
+  <input type="number" id="desconto" placeholder="Descontos">
+  <input type="number" id="bonus" placeholder="Bónus">
+
+  <button onclick="calcular()">Calcular</button>
+
+  <h2 id="resultado"></h2>
+
+  <script src="script.js"></script>
+</body>
+</html>
