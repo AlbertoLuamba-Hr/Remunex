@@ -1,11 +1,11 @@
-# 💼 Sistema de Gestão de Folha de Pagamento
+#  Sistema de Gestão de Folha de Pagamento
 
-## 📌 Descrição
+##  Descrição
 Este projeto é um sistema de gestão de Recursos Humanos focado no processamento salarial. Permite cadastrar funcionários, calcular salários automaticamente e gerar recibos mensais.
 
 ---
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 - Cadastro de funcionários
 - Processamento salarial automático
 - Cálculo de INSS e IRT
@@ -15,14 +15,14 @@ Este projeto é um sistema de gestão de Recursos Humanos focado no processament
 
 ---
 
-## 🧮 Regras de Cálculo
+##  Regras de Cálculo
 - INSS: 3% (trabalhador)
 - INSS: 8% (empresa)
 - IRT: conforme tabela fiscal de Angola
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 - Python
 - Django
 - PostgreSQL
@@ -30,7 +30,7 @@ Este projeto é um sistema de gestão de Recursos Humanos focado no processament
 
 ---
 
-## 📂 Estrutura do Projeto
+##  Estrutura do Projeto
 - Funcionários
 - Processamento Salarial
 - Relatórios
@@ -38,7 +38,7 @@ Este projeto é um sistema de gestão de Recursos Humanos focado no processament
 
 ---
 
-## ▶️ Como usar
+##  Como usar
 1. Importar ficheiro Excel com dados dos funcionários
 2. Processar salários automaticamente
 3. Gerar recibos
@@ -46,7 +46,7 @@ Este projeto é um sistema de gestão de Recursos Humanos focado no processament
 
 ---
 
-## 📈 Futuras Melhorias
+##  Futuras Melhorias
 - Gestão de férias
 - Controle de faltas
 - Multiempresa
@@ -61,5 +61,5 @@ let salarioFinal = salarioBase - desconto + bonus;
 
 console.log(salarioFinal);
 
-## 👤 Autor
+##  Autor
 Alberto Celestino Luamba
