@@ -1,9 +1,5 @@
-function calcular() {
-  let salario = document.getElementById("salario").value;
-  let desconto = document.getElementById("desconto").value;
-  let bonus = document.getElementById("bonus").value;
-
-  let total = Number(salario) - Number(desconto) + Number(bonus);
-
-  document.getElementById("resultado").innerText = "Salário final: " + total;
-}
+<script src="script.js"></script>
+<button onclick="adicionarFuncionario()">Adicionar</button>
+<input id="nome">
+<input id="salario">
+<input id="subsidio">
